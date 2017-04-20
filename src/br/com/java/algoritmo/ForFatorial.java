@@ -1,4 +1,4 @@
-package br.com.java.repeticao;
+package br.com.java.algoritmo;
 
 public class ForFatorial {
 	public static void main(String[] args) {
