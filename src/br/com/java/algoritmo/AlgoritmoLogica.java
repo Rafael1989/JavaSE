@@ -12,7 +12,13 @@ public class AlgoritmoLogica {
 			}else{
 				numero = 3 * numero + 1;
 			}
-			System.out.println(numero);
+			if(numero != 1){
+				System.out.print(numero + "->");
+			}else{
+				System.out.println(numero);
+			}
+			
+			
 		}
 			
 	}
