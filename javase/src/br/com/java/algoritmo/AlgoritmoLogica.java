@@ -1,7 +1,7 @@
 package br.com.java.algoritmo;
 
 import java.util.Scanner;
-//teste
+
 public class AlgoritmoLogica {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
