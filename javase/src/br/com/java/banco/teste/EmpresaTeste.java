@@ -5,11 +5,9 @@ import br.com.java.banco.modelo.Funcionario;
 
 public class EmpresaTeste {
 	public static void main(String[] args) {
-		Empresa empresa = new Empresa();
-		Funcionario[] funcionarios = new Funcionario[10];
-		empresa.setFuncionarios(funcionarios);
+		Empresa empresa = new Empresa(10);
 		empresa.setCnpj("111111111111-11");
-		empresa.setNome("Notredame");
+		empresa.setNome("qqqqq");
 		Funcionario funcionario = new Funcionario();
 		funcionario.setDepartamento("Recursos Humanos");
 		funcionario.setNome("Thubiru");
@@ -23,5 +21,6 @@ public class EmpresaTeste {
 		empresa.adiciona(funcionario);
 		empresa.adiciona(funcionario2);
 		empresa.mostraEmpregados();
+		System.out.println(empresa.contem(funcionario2));
 	}
 }

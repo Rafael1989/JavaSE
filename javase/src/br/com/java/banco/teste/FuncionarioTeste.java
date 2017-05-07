@@ -5,12 +5,11 @@ import br.com.java.banco.modelo.Funcionario;
 public class FuncionarioTeste {
 
 	public static void main(String[] args) {
-		Funcionario joao = new Funcionario();
+		Funcionario joao = new Funcionario("João Nascimento");
 		joao.setRg("38.000.451-3");
-		joao.setNome("João Nascimento");
-		joao.getDataAdmissao().setDia(1);
-		joao.getDataAdmissao().setMes(4);
-		joao.getDataAdmissao().setAno(2016);
+		joao.getDataAdmissao().setDia(31);
+		joao.getDataAdmissao().setMes(2);
+		joao.getDataAdmissao().setAno(2005);
 		joao.setDepartamento("Tecnologia da Informação");
 		joao.setSalario(5000);
 		joao.recebeAumento(5000);

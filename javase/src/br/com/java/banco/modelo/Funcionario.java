@@ -7,6 +7,17 @@ public class Funcionario {
 	private double salario;
 	private Data dataAdmissao = new Data();
 	private String rg;
+	public static int identificador;
+	
+	public Funcionario() {
+		// TODO Auto-generated constructor stub
+		identificador++;
+	}
+	
+	public Funcionario(String nome){
+		this.nome = nome;
+		identificador++;
+	}
 
 	public void recebeAumento(double aumento) {
 		this.salario += aumento;
@@ -17,6 +28,7 @@ public class Funcionario {
 	}
 	
 	public void mostra(){
+		System.out.println("Identificador: " + Funcionario.identificador);
 		System.out.println("Registro Geral: " + this.getRg());
 		System.out.println("Nome: " + this.getNome());
 		System.out.println("Data de admissão: " + this.dataAdmissao.formatada());
@@ -61,5 +73,5 @@ public class Funcionario {
 	public void setRg(String rg) {
 		this.rg = rg;
 	}
-
+	
 }

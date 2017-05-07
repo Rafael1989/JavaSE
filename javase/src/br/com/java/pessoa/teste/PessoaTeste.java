@@ -6,8 +6,8 @@ public class PessoaTeste {
 
 	public static void main(String[] args) {
 		Pessoa pessoa = new Pessoa();
-		pessoa.setNome("Rafael");
-		pessoa.setIdade(27);
+		pessoa.setNome("aaaaaa");
+		pessoa.setIdade(111);
 		pessoa.fazAniversario();
 		pessoa.fazAniversario();
 		System.out.println("Nome: " + pessoa.getNome());

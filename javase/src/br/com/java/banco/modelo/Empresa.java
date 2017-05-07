@@ -6,6 +6,10 @@ public class Empresa {
 	private String cnpj;
 	private Funcionario [] funcionarios;
 	
+	public Empresa(int quantidadeFuncionarios){
+		this.funcionarios = new Funcionario[quantidadeFuncionarios];
+	}
+	
 	public void adiciona(Funcionario funcionario){
 		boolean quantidadeFuncionariosLotou = true;
 		for(int i = 0; i < funcionarios.length;i++){
@@ -29,18 +33,16 @@ public class Empresa {
 	public void mostraEmpregados(){
 		System.out.println("Nome da empresa: " + this.getNome());
 		System.out.println("CNPJ da empresa: " + this.getCnpj());
-		for(int i = 0;i<this.getFuncionarios().length;i++){
-			if(this.getFuncionarios()[i]!= null){
-				this.getFuncionarios()[i].mostra();
+		for(int i = 0;i<this.funcionarios.length;i++){
+			if(this.funcionarios[i]!= null){
+				this.funcionarios[i].mostra();
 			}
 		}
 	}
 	
 	public boolean contem(Funcionario funcionario){
-		for(int i = 0;i<this.funcionarios.length;i++){
-			if(this.funcionarios[i].getRg().equals(funcionario.getRg())){
-				return true;
-			}
+		if(getFuncionario(Funcionario.identificador-1)!=null){
+			return true;
 		}
 		return false;
 	}
@@ -61,11 +63,8 @@ public class Empresa {
 		return cnpj;
 	}
 	
-	public Funcionario[] getFuncionarios() {
-		return funcionarios;
+	public Funcionario getFuncionario(int posicao) {
+		return funcionarios[posicao];
 	}
 	
-	public void setFuncionarios(Funcionario[] funcionarios) {
-		this.funcionarios = funcionarios;
-	}
 }
