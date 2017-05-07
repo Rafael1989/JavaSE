@@ -2,17 +2,14 @@ package br.com.java.banco.teste;
 
 import br.com.java.banco.modelo.AtualizadorDeContas;
 import br.com.java.banco.modelo.Banco;
-import br.com.java.banco.modelo.Conta;
 import br.com.java.banco.modelo.ContaCorrente;
 import br.com.java.banco.modelo.ContaPoupanca;
 
 public class BancoTeste {
 	public static void main(String[] args) {
 		Banco banco = new Banco(10);
-		Conta conta = new Conta();
 		ContaCorrente contaCorrente = new ContaCorrente();
 		ContaPoupanca contaPoupanca = new ContaPoupanca();
-		banco.adiciona(conta);
 		banco.adiciona(contaCorrente);
 		banco.adiciona(contaPoupanca);
 		

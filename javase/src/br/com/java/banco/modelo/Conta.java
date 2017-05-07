@@ -1,8 +1,8 @@
 package br.com.java.banco.modelo;
 
-public class Conta {
+public abstract class Conta {
 
-	private double saldo;
+	protected double saldo;
 	
 	public double getSaldo() {
 		return saldo;
@@ -16,7 +16,5 @@ public class Conta {
 		this.saldo += valor;
 	}
 	
-	public void atualiza(double taxa){
-		this.saldo += this.saldo * taxa;
-	}
+	public abstract void atualiza(double taxa);
 }

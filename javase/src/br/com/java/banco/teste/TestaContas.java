@@ -7,15 +7,12 @@ import br.com.java.banco.modelo.ContaPoupanca;
 
 public class TestaContas {
 	public static void main(String[] args) {
-		Conta conta = new Conta();
 		Conta contaCorrente = new ContaCorrente();
 		Conta contaPoupanca = new ContaPoupanca();
 		
-		conta.deposita(100);
 		contaCorrente.deposita(100);
 		contaPoupanca.deposita(100);
 		
-		conta.saca(50);
 		contaCorrente.saca(50);
 		contaPoupanca.saca(50);
 		
@@ -28,7 +25,6 @@ public class TestaContas {
 		System.out.println(contaPoupanca.getSaldo());*/
 		
 		AtualizadorDeContas atualizadorDeContas = new AtualizadorDeContas(0.01);
-		atualizadorDeContas.roda(conta);
 		atualizadorDeContas.roda(contaPoupanca);
 		atualizadorDeContas.roda(contaCorrente);
 		
