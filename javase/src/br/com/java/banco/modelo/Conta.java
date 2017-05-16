@@ -9,8 +9,28 @@ import br.com.java.exception.ValorInvalidoException;
  *
  */
 public abstract class Conta {
+	
+	protected int numero;
+	
+	protected String nome;
 
 	protected double saldo;
+	
+	public int getNumero() {
+		return numero;
+	}
+	
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 	
 	public double getSaldo() {
 		return saldo;
@@ -33,4 +53,16 @@ public abstract class Conta {
 	}
 	
 	public abstract void atualiza(double taxa);
+	
+	@Override
+	public String toString() {
+		return "Esse objeto é uma conta com saldo: R$" + this.saldo;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Conta outraConta = (Conta)obj;
+		
+		return this.numero == outraConta.getNumero() || this.nome == outraConta.getNome();
+	}
 }
