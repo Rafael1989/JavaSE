@@ -10,9 +10,9 @@ import br.com.java.exception.ValorInvalidoException;
  */
 public abstract class Conta {
 	
-	protected int numero;
+	private int numero;
 	
-	protected String nome;
+	private String nome;
 
 	protected double saldo;
 	
