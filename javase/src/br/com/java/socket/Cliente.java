@@ -1,5 +1,6 @@
 package br.com.java.socket;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.Socket;
@@ -10,6 +11,8 @@ public class Cliente {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Qual seu nome?");
 		String nome = scanner.nextLine();
+		System.out.println("Teclado do " + nome);
+		System.out.println("------------------------------------------------------------------------");
 		new Cliente("127.0.0.1", 12345, nome).executa();
 	}
 	
@@ -29,21 +32,19 @@ public class Cliente {
 	
 	public void executa() throws IOException{
 		Socket cliente = new Socket(this.host, this.porta);
-		System.out.println("O cliente se conectou ao servidor.");
+		
 		
 		Recebedor r = new Recebedor(cliente.getInputStream());
 		new Thread(r).start();
 		
-		Scanner teclado = new Scanner(System.in);
+		Scanner teclado = new Scanner(new FileInputStream("arquivo.txt"));
 		PrintStream saida = new PrintStream(cliente.getOutputStream());
-		
+		saida.println(nome+" entrou na sala");
 		while(teclado.hasNextLine()){
-			saida.print(nome+":");
+			saida.print(nome+" disse: ");
 			saida.println(teclado.nextLine());
 		}
 		
-		saida.close();
-		teclado.close();
-		cliente.close();
+		
 	}
 }
